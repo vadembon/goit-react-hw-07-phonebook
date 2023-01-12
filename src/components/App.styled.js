@@ -7,3 +7,7 @@ export const BoxForm = styled.div`
   background: rgba(0, 0, 0, 0.2);
   border-radius: 6px;
 `;
+export const Loader = styled.p`
+  text-align: center;
+  text-decoration: underline;
+`;

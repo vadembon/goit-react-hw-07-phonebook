@@ -5,10 +5,10 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { fetchContacts } from './Redux/operations';
 import { getIsLoading, getError } from './Redux/selectors';
-import { ContactForm } from './ContactForm/Contact form';
+import { ContactForm } from './ContactForm/ContactForm';
 import { Filter } from './Filter/Filter';
 import { ConttactList } from './ContactList/ContactList';
-import { BoxForm } from './App.styled';
+import { BoxForm, Loader } from './App.styled';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -22,7 +22,11 @@ export const App = () => {
     <BoxForm>
       <ContactForm />
       <Filter />
-      {isLoading && !error && <b>Request in progress...</b>}
+      {isLoading && !error && (
+        <Loader>
+          <b>Request in progress...</b>
+        </Loader>
+      )}
       <ConttactList />
       <ToastContainer position="top-right" theme="colored" autoClose={2000} />
     </BoxForm>
